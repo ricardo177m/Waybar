@@ -467,7 +467,12 @@ auto Workspace::handle_clicked(GdkEventButton *bt) -> bool {
   if (action.empty())
     return true;
   else if (action == "activate") {
-    zext_workspace_handle_v1_activate(workspace_handle_);
+    // zext_workspace_handle_v1_activate(workspace_handle_);
+    // workaround for hyprland: send dispatch with hyprctl
+    spdlog::info("Sending dispatch to hyprctl");
+    std::string cmd = "hyprctl dispatch workspace " + name_;
+    spdlog::info("cmd: {}", cmd);
+    system(cmd.c_str());
   } else if (action == "close") {
     zext_workspace_handle_v1_remove(workspace_handle_);
   } else {
