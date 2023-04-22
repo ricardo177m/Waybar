@@ -2,10 +2,10 @@
 
 > Highly customizable Wayland bar for Sway and Wlroots based compositors.<br>
 > Available in Arch [community](https://www.archlinux.org/packages/community/x86_64/waybar/) or
-[AUR](https://aur.archlinux.org/packages/waybar-git/), [Gentoo](https://packages.gentoo.org/packages/gui-apps/waybar), [openSUSE](https://build.opensuse.org/package/show/X11:Wayland/waybar), and [Alpine Linux](https://pkgs.alpinelinux.org/packages?name=waybar).<br>
-> *Waybar [examples](https://github.com/Alexays/Waybar/wiki/Examples)*
+> [AUR](https://aur.archlinux.org/packages/waybar-git/), [Gentoo](https://packages.gentoo.org/packages/gui-apps/waybar), [openSUSE](https://build.opensuse.org/package/show/X11:Wayland/waybar), and [Alpine Linux](https://pkgs.alpinelinux.org/packages?name=waybar).<br> > _Waybar [examples](https://github.com/Alexays/Waybar/wiki/Examples)_
 
 #### Current features
+
 - Sway (Workspaces, Binding mode, Focused window name)
 - River (Mapping mode, Tags, Focused window name)
 - Hyprland (Focused window name)
@@ -40,13 +40,13 @@ Waybar is available from a number of Linux distributions:
 An Ubuntu PPA with more recent versions is available
 [here](https://launchpad.net/~nschloe/+archive/ubuntu/waybar).
 
-
 #### Building from source
 
 ```bash
 $ git clone https://github.com/Alexays/Waybar
 $ cd Waybar
 $ meson build
+$ meson configure -Dexperimental=true build # hyprland wlr/workspaces support
 $ ninja -C build
 $ ./build/waybar
 # If you want to install it
@@ -112,7 +112,6 @@ sudo apt install \
   upower \
   libxkbregistry-dev
 ```
-
 
 Contributions welcome!<br>
 Have fun :)<br>
